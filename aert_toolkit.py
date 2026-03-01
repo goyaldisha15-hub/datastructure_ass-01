@@ -30,7 +30,7 @@ class StackADT:
 def factorial(n):
          if n < 0:
             return "Invalid input"
-         if n ==0:
+         if n ==0 or n==1:
               return 1
          return n * factorial(n-1)
 
@@ -76,15 +76,20 @@ def fib_memo(n):
 #tower of hanoi
 #--------------------------------------#
 
-def hanoi(n,s,a,d):
+def hanoi(n, source, auxiliary, destination, stack):
 
-     if n==1:
-         print("Move disk", 1 ,"from",s,"to",d)
-         return
-     
-     hanoi(n-1,s,d,a)
-     print("Move disk",n,"from",s,"to",d)
-     hanoi(n-1,a,s,d)
+    if n == 1:
+        move = f"Move disk 1 from {source} to {destination}"
+        stack.push(move)
+        return
+
+    hanoi(n-1, source, destination, auxiliary, stack)
+
+    move = f"Move disk {n} from {source} to {destination}"
+    stack.push(move)
+
+    hanoi(n-1, auxiliary, source, destination, stack)
+    
 
 #------------------------------------------#
 #recursive binary search
@@ -143,8 +148,11 @@ if __name__=="__main__":
 
 
     print("\n----- TOWER OF HANOI (N=3) -----")
-    hanoi(3, "A", "B", "C")
+    st_hanoi = StackADT()
+    hanoi(3, "A", "B", "C", st_hanoi)
 
+    while not st_hanoi.is_empty():
+        print(st_hanoi.pop())
 
     print("\n----- BINARY SEARCH TEST -----")
     arr = [1,3,5,7,9,11,13]
@@ -154,3 +162,4 @@ if __name__=="__main__":
 
     print("Empty array test:",
           binary_search([], 5, 0, -1))
+
