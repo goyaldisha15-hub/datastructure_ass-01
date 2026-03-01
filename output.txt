@@ -1,0 +1,49 @@
+----- STACK TEST -----
+Top element: 20
+Stack size: 2
+Popped: 20
+Stack size after pop: 1
+
+----- FACTORIAL TEST -----
+factorial( 0 ) = 1
+factorial( 1 ) = 1
+factorial( 5 ) = 120
+factorial( 10 ) = 3628800
+
+----- FIBONACCI TEST -----
+
+Naive fib( 5 ) = 5
+Naive Calls = 15
+Memo fib( 5 ) = 5
+Memo Calls = 9
+
+Naive fib( 10 ) = 55
+Naive Calls = 177
+Memo fib( 10 ) = 55
+Memo Calls = 19
+
+Naive fib( 20 ) = 6765
+Naive Calls = 21891
+Memo fib( 20 ) = 6765
+Memo Calls = 39
+
+Naive fib( 30 ) = 832040
+Naive Calls = 2692537
+Memo fib( 30 ) = 832040
+Memo Calls = 59
+
+----- TOWER OF HANOI (N=3) -----
+Move disk 1 from A to C
+Move disk 2 from A to B
+Move disk 1 from C to B
+Move disk 3 from A to C
+Move disk 1 from B to A
+Move disk 2 from B to C
+Move disk 1 from A to C
+
+----- BINARY SEARCH TEST -----
+Search 7 : 3
+Search 1 : 0
+Search 13 : 6
+Search 2 : -1
+Empty array test: -1
